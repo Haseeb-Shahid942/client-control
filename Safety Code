@@ -1,0 +1,9 @@
+<script src="https://raw.githack.com/Haseeb-Shahid942/client-control/main/safety.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        let name = 'example-site'; // this must match clients/example-site.txt
+        safetyChecker(name);
+    }, 5000);
+});
+</script>
