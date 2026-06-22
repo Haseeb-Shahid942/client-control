@@ -1,9 +1,11 @@
-<script src="https://raw.githack.com/Haseeb-Shahid942/client-control/main/safety.js" defer></script>
+<script src="https://raw.githack.com/Haseeb-Shahid942/client-control/main/safety.js"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
-        let name = 'example-site'; // only typr filename without .txt
-        safetyChecker(name);
+        if (typeof safetyChecker === "function") {
+            safetyChecker('example-site');
+        }
     }, 5000);
 });
 </script>
