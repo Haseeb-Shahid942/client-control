@@ -1,8 +1,7 @@
 async function safetyChecker(siteName) {
     console.log("safetyChecker called");
 
-    let url = `https://raw.githubusercontent.com/Haseeb-Shahid942/client-control/main/clients/${siteName}.txt?t=${Date.now()}`;
-
+let url = `https://raw.githubusercontent.com/Haseeb-Shahid942/client-control/main/clients/${siteName}.txt?nocache=${new Date().getTime()}`;
     const response = await fetch(url);
     const status = (await response.text()).trim().toLowerCase();
 
