@@ -1,7 +1,7 @@
 async function safetyChecker(siteName) {
     try {
         let security_key = "True";
-        let url = `https://raw.githack.com/Haseeb-Shahid942/client-control/main/clients/${siteName}.txt`;
+        let url = `https://raw.githubusercontent.com/Haseeb-Shahid942/client-control/main/clients/${siteName}.txt?t=${Date.now()}`;
 
         const response = await fetch(url);
 
