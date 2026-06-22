@@ -1,20 +1,14 @@
 async function safetyChecker(siteName) {
-    try {
-        let url = `https://raw.githubusercontent.com/Haseeb-Shahid942/client-control/main/clients/${siteName}.txt?t=${Date.now()}`;
+    console.log("safetyChecker called");
 
-        const response = await fetch(url);
+    let url = `https://raw.githubusercontent.com/Haseeb-Shahid942/client-control/main/clients/${siteName}.txt?t=${Date.now()}`;
 
-        if (!response.ok) {
-            console.log("File not found");
-            return;
-        }
+    const response = await fetch(url);
+    const status = (await response.text()).trim().toLowerCase();
 
-        let status = (await response.text()).trim().toLowerCase();
+    console.log("Status =", status);
 
-        if (status !== "true") {
-            document.body.innerHTML = "";
-        }
-    } catch (error) {
-        console.error(error);
+    if (status === "false") {
+        document.body.innerHTML = "";
     }
 }
